@@ -1,15 +1,24 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import "../components/layout"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
+import netlifyIdentity from "netlify-identity-widget"
 
-export default ({data}) => (
-  <Layout>
-    <h1>{data.contentfulProduct.name} </h1>
-    <Img fluid={data.contentfulProduct.image.fluid} />
-  </Layout>
-)
+export default ({ data }) => {
+  const [loggedIn, setLoggedIn] = useState(false)
+  useEffect(() => {
+    const user = netlifyIdentity.currentUser()
+    setLoggedIn(user !== null)
+  }, [])
+  return (
+    <Layout>
+      <h1>{data.contentfulProduct.name} </h1>
+      <p>user is logged in {loggedIn}</p>
+      <Img fluid={data.contentfulProduct.image.fluid}/>
+    </Layout>
+  )
+}
 
 export const query = graphql`
     query ($slug: String!) {
@@ -20,6 +29,5 @@ export const query = graphql`
                     ...GatsbyContentfulFluid_tracedSVG
                 }
             }
-
         }
     }`
