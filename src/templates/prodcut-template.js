@@ -14,7 +14,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <h1>{data.contentfulProduct.name} </h1>
-      <p>user is logged in {loggedIn}</p>
+      <p>user is logged in :{`${loggedIn}`}</p>
       <Img fluid={data.contentfulProduct.image.fluid}/>
     </Layout>
   )
