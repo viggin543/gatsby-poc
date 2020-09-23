@@ -9,6 +9,8 @@ export default ({ data }) => {
   const [loggedIn, setLoggedIn] = useState(false)
   useEffect(() => {
     const user = netlifyIdentity.currentUser()
+    netlifyIdentity.on("login", user => console.log(user))
+    netlifyIdentity.on("logout", user => console.log(user))
     setLoggedIn(user !== null)
   }, [])
   return (
