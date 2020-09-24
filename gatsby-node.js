@@ -13,6 +13,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
+  // this content happens on site generation
   const res = await graphql(`{
    allMarkdownRemark {
       edges {
@@ -49,7 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: Producttemplate,
       context: {
         slug: product.slug,
-
       }
     })
   })

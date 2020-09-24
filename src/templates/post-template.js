@@ -10,6 +10,7 @@ export default ({data: post}) => (
   </Layout>
 )
 
+// this query happens on load of component
 export const query = graphql`
     query($slug: String!) {
       markdownRemark(fields: {

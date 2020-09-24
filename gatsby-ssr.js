@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+import provideStores from './src/stores/mobx-store'
+export const wrapRootElement = provideStores
