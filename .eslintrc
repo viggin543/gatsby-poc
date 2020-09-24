@@ -3,7 +3,6 @@
     "airbnb",
     "prettier",
     "prettier/react"
-
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -40,7 +39,7 @@
     "prefer-const": [
       "error",
       {
-        "destructuring": "all",
+        "destructuring": "all"
       }
     ],
     "arrow-body-style": [
@@ -67,6 +66,7 @@
     "comma-dangle": 0,
     "max-len": 0,
     "import/extensions": 0,
+    "import/no-unresolved": 0,
     "no-underscore-dangle": 0,
     "consistent-return": 0,
     "react/display-name": 1,
@@ -82,7 +82,8 @@
       {
         "extensions": [
           ".js",
-          ".jsx"
+          ".jsx",
+          ".tsx"
         ]
       }
     ],
@@ -114,7 +115,7 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 80,
+        "printWidth": 80
       }
     ],
     "jsx-a11y/href-no-hash": "off",
@@ -129,6 +130,7 @@
   },
   "plugins": [
     // "html",
-    "prettier"
+    "prettier",
+    "graphql"
   ]
 }

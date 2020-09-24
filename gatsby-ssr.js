@@ -6,5 +6,13 @@
 
 // You can delete this file if you're not using it
 
+import React from 'react'
 import provideStores from './src/stores/mobx-store'
+import Layout from './src/components/layout'
+
 export const wrapRootElement = provideStores
+
+export function wrapPageElement({ element, props }) {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <Layout {...props}>{element}</Layout>
+}

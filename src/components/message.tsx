@@ -1,35 +1,34 @@
-
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import { inject, observer } from 'mobx-react'
 
 // the "messages" prop is provided with "inject"
-const Messages = ({ messages: messagesStore }) => {
+function Message({ messages: messagesStore }: any) {
   const { messages } = messagesStore
   const [messageValue, setMessageValue] = useState('')
 
   // Keep track of our new message value
-  const handleInputChange = event => {
+  const handleInputChange = (event: any) => {
     setMessageValue(event.target.value)
   }
 
   // Add the new message
   const handleNewMessage = () => {
     messagesStore.addMessage(messageValue)
-    setMessageValue("")
+    setMessageValue('')
     // clear the input field
   }
 
   return (
     <div>
-      <input onChange={handleInputChange} value= {messageValue} />
-      <button onClick={handleNewMessage}>
+      <input onChange={handleInputChange} value={messageValue} />
+      <button type="button" onClick={handleNewMessage}>
         Add Message
       </button>
-      <button onClick={messagesStore.clearMessages}>
+      <button type="button" onClick={messagesStore.clearMessages}>
         Clear Messages
       </button>
       <ul>
-        {messages.map((message, m) => (
+        {messages.map((message: string, m: number) => (
           <li key={m}>{message}</li>
         ))}
       </ul>
@@ -37,4 +36,4 @@ const Messages = ({ messages: messagesStore }) => {
   )
 }
 
-export default inject('messages')(observer(Messages))
+export default inject('messages')(observer(Message))

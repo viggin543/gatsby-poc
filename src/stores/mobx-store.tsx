@@ -1,18 +1,17 @@
-import { observable, action, decorate } from 'mobx'
+import { action, decorate, observable } from 'mobx'
 import { Provider } from 'mobx-react'
-import React from "react"
+import React from 'react'
 
 export class MessagesStore {
-  messages : Array<string>= []
+  messages: Array<string> = []
 
-  addMessage(message: string) {
+  addMessage = (message: string) => {
     this.messages.push(message)
   }
 
-  clearMessages() {
-    this.messages = []
+  clearMessages = () => {
+    this.messages.clear()
   }
-
 }
 
 decorate(MessagesStore, {
@@ -21,7 +20,6 @@ decorate(MessagesStore, {
   clearMessages: action,
 })
 
-
-export default ({ element } : {element: string}) => <Provider
-  messages={new MessagesStore()}>{element}
-</Provider>
+export default ({ element }: { element: string }) => (
+  <Provider messages={new MessagesStore()}>{element}</Provider>
+)
