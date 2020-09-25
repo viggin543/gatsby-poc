@@ -1,15 +1,21 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import Logo from './Logo'
 
 const NavStyled = styled.nav`
   margin-bottom: 3rem;
+  .logo {
+    transform: translateY(
+      -25%
+    ); // pull up without adding it any margin or padding. nice
+  }
   ul {
-    margin: 0;
     padding: 0;
     display: grid;
     text-align: center;
     list-style: none;
+    margin: -6rem 0 0;
 
     grid-template-columns: 1fr 1fr auto 1fr 1fr;
     align-items: center;
@@ -35,6 +41,10 @@ const NavStyled = styled.nav`
       font-size: 3rem;
       text-decoration: none;
       colo&:hover {
+        color: var(--red);
+      }
+      &[aria-current='page'] {
+        // if current link
         color: var(--red);
       }
     }
@@ -63,6 +73,9 @@ export default function Nav(props) {
         </li>
         <li>
           <Link to="/page-3/">Go to page 3</Link>
+        </li>
+        <li>
+          <Logo />
         </li>
         <li>
           <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
