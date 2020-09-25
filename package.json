@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.3",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -35,7 +37,9 @@
     "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.1",
-    "prettier": "2.1.1"
+    "prettier": "2.1.1",
+    "typescript": "^4.0.3",
+    "typescript-eslint": "0.0.1-alpha.0"
   },
   "keywords": [
     "gatsby"
@@ -43,8 +47,8 @@
   "license": "0BSD",
   "scripts": {
     "tsc": "tsc",
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "build": "NODE_OPTIONS='-r esm' ;GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "develop": "NODE_OPTIONS='-r esm' gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

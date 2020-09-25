@@ -1,9 +1,16 @@
+//todo: cool eslint.rc ( add graphql )
 {
   "extends": [
     "airbnb",
     "prettier",
     "prettier/react"
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }},
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -15,7 +22,6 @@
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true,
     "jest": true
   },
   "rules": {
@@ -83,7 +89,8 @@
         "extensions": [
           ".js",
           ".jsx",
-          ".tsx"
+          ".tsx",
+          ".ts"
         ]
       }
     ],
@@ -131,6 +138,8 @@
   "plugins": [
     // "html",
     "prettier",
-    "graphql"
+    "graphql", //todo: configure this plugin !
+    "@typescript-eslint/eslint-plugin" //npm i --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
   ]
 }

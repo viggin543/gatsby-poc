@@ -3,12 +3,14 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 
+// todo: css start by styling top container and reach inside with nested queries
+// only if some parts become reusable extract them to a seperate styled comp
 const NavStyled = styled.nav`
   margin-bottom: 3rem;
   .logo {
     transform: translateY(
       -25%
-    ); // pull up without adding it any margin or padding. nice
+    ); //todo: css pull element up without adding it any margin or padding. nice
   }
   ul {
     padding: 0;
@@ -22,11 +24,12 @@ const NavStyled = styled.nav`
     grid-gap: 2rem;
   }
   li {
-    --rotate: -2deg;
+    --rotate: -2deg; // todo: local css variable
     transform: rotate(var(--rotate));
-    order: 1; //media query ?
+    order: 1; //will be used in a media query ?
     &:nth-child(1) {
-      --rotate: 1deg;
+      //todo: css trick to rotate a bit on hover, nice.
+      --rotate: 1deg; //todo: override local css variable to update rotate ( in order to not override all the transform property )
     }
     &:nth-child(2) {
       --rotate: -2.5deg;
@@ -44,7 +47,7 @@ const NavStyled = styled.nav`
         color: var(--red);
       }
       &[aria-current='page'] {
-        // if current link
+        //todo: css selector of current link
         color: var(--red);
       }
     }

@@ -4,7 +4,7 @@ import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
 function createPatchFrom(value) {
   return PatchEvent.from(value === '' ? unset() : set(Number(value)));
 }
-//todo: nice number format
+//todo: nice js number format
 const formatMoney = Intl.NumberFormat('en-CA', {
   style: 'currency',
   currency: 'CAD',

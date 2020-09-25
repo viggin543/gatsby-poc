@@ -1,4 +1,4 @@
-import { MdLocalPizza as icon } from 'react-icons/md';// todo: cool icons
+import { MdLocalPizza as icon } from 'react-icons/md';// todo: cool react icons lib
 import PriceInput from '../components/PriceInput';
 
 export default {

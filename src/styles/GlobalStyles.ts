@@ -3,7 +3,7 @@ import bg from '../assets/images/bg.svg'
 import stripes from '../assets/images/stripes.svg'
 
 const GlobalStyles = createGlobalStyle`
-  :root {
+  :root { //todo: global css variables
     --red: #FF4949;
     --black: #2E2E2E;
     --yellow: #ffc600;
@@ -11,10 +11,10 @@ const GlobalStyles = createGlobalStyle`
     --grey: #efefef;
   }
   html {
-    background-image: url(${bg});
+    background-image: url(${bg}); //todo: gatsby will embed image as base64 if its small 
     background-size: 450px;
     background-attachment: fixed;
-    font-size: 10px; // base for all rem cals -> so 2rem is 20px
+    font-size: 10px; //todo: REM base size  -> so 2rem is 20px ( everywhere )
   }
 
   body {

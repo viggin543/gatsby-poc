@@ -4,7 +4,7 @@ import font from '../assets/fonts/frenchfries.woff'
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: FrenchFries;
+    font-family: FrenchFries; //todo: using custom fonts
     src: url(${font});
   }
   html {

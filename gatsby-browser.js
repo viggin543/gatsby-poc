@@ -7,7 +7,7 @@
 
 // You can delete this file if you're not using it
 import React from 'react'
-import 'normalize.css'
+import 'normalize.css' // todo: normalize css
 import provideStores from './src/stores/mobx-store'
 import Layout from './src/components/layout'
 
