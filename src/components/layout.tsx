@@ -66,7 +66,6 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Typography />
-      <GlobalStyles />
       <SiteBorderStyled>
         <ContentStyled>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />

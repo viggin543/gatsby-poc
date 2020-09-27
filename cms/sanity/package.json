@@ -28,10 +28,13 @@
     "@sanity/google-maps-input": "1.150.1",
     "@sanity/structure": "1.150.1",
     "@sanity/vision": "1.150.6",
+    "babel-plugin-styled-components": "^1.11.1",
+    "gatsby-plugin-styled-components": "^3.3.11",
     "prop-types": "^15.7",
     "react": "^16.13",
     "react-dom": "^16.13",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

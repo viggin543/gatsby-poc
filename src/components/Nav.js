@@ -55,6 +55,7 @@ const NavStyled = styled.nav`
 `
 
 export default function Nav(props) {
+  // todo: gatsby static query -> no variables, can run everywhere
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -81,16 +82,14 @@ export default function Nav(props) {
           <Logo />
         </li>
         <li>
-          <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+          <Link to="/pizzas/">pizzas</Link>
         </li>
         <li>
           <Link to="/posts/hello">hello</Link>
         </li>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <li>
-            <Link key={node.fields.slug} to={`/bananas${node.fields.slug}`}>
-              {node.fields.slug}
-            </Link>
+          <li key={node.fields.slug}>
+            <Link to={`/bananas${node.fields.slug}`}>{node.fields.slug}</Link>
           </li>
         ))}
       </ul>
